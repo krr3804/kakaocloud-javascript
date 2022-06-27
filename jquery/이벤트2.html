@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <p>마우스를 이 위에서 움직여보세요</p>
+
+    <input type="text" name="" id="userId"/> <br/>
+    <input type="text" name="" id="username"/> <br/>
+</body>
+</html>
+<script>
+    $(() => {
+        // $("p").mouseenter(function() {
+        //     console.log("mouse enter");
+        //     $(this).css("background-color","red");
+        // });
+
+        // $("p").mouseleave(function() {
+        //     console.log("mouse leave");
+        //     $(this).css("background-color","white");
+        // });
+
+        $("p").hover(function() {
+            $(this).css("background-color","grey"); //마우스 들어올때
+        }, function() {
+            $(this).css("background-color","white"); //마우스 나갈때
+        });
+        //포커스 들어올때
+        $("input").focus(function() {
+            $(this).css("background-color","magenta");
+        });
+        //포커스 뺏길때
+        $("input").blur(function() {
+            $(this).css("background-color","white");
+        });
+    });
+</script>

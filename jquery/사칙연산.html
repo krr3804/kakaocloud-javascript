@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    x : <input type="text" id="xvalue"/> <br/>
+    y : <input type="text" id="yvalue"/> <br/>
+    <button type="button" id="btnAdd" class="button">Add</button>
+    <button type="button" id="btnSub" class="button" >Subtraact</button>
+    <button type="button" id="btnMul" class="button">Multiply</button>
+    <button type="button" id="btnDiv" class="button">Divide</button>
+
+    <div id="result"></div>
+</body>
+</html>
+
+<script>
+    $(() => {
+        $(".button").click((button) => {
+            var x = parseInt($("#xvalue").val());
+            var y = parseInt($("#yvalue").val());
+            var op = button.target.id;
+            var result = null;
+            if(op == "btnAdd") {
+                result = x + y;
+            }
+            if(op == "btnSub") {
+                result = x - y;
+            }
+            if(op == "btnMul") {
+                result = x * y;
+            }
+            if(op == "btnDiv") {
+                result = x / y;
+            }
+            $("#result").html(`Result : ${result}`);
+        })
+    });
+</script>

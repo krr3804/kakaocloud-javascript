@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.box {
+            float:left;
+            width: 80px;
+            height: 80px;
+            display: none;
+        }
+
+        div.clearfix {
+            clear: left;
+            width: 0px;
+            height: 0px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box" id="box1" style="background-color: red;"></div>
+    <div class="box" id="box2" style="background-color: green;"></div>
+    <div class="box" id="box3" style="background-color: blue"></div>
+    <div class="clearfix"></div>
+
+    <button type="button" id="btnPress">나타나라</button>
+    <button type="button" id="btnDisappear">사라져라</button>
+</body>
+</html>
+
+<script>
+    $(() => {
+        $("#btnPress").click(() => {
+            $("#box1").fadeIn();
+            $("#box2").fadeIn("slow");
+            $("#box3").fadeIn(5000,function() {
+                //모든동장이 완료되면 호출된다.
+                alert("완료");
+            });
+        });
+
+        $("#btnDisappear").click(() => {
+            $("#box1").fadeOut();
+            $("#box2").fadeOut("slow");
+            // $("#box3").fadeOut(5000);
+
+            $("#box3").fadeOut(3000).fadeIn(3000);
+            $("#box3").fadeOut(3000, function() {
+                $("#box3").fadeIn(3000);
+            });
+        })
+    });
+</script>

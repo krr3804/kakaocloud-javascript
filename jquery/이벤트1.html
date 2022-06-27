@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <form id="myform">
+        <input type="text" name="x" id="x"/>
+        <input type="button" value="보내기1" id="btnSend"/>
+        <button id="btnPress">보내기2</button>
+    </form>
+    
+</body>
+</html>
+
+<script>
+    $(() => {
+        $("#btnSend").click(() => {
+            if($("#x").val().trim().length < 5) {
+                alert("5글자가 넘게 입력하세요");
+                $("#x").focus();
+                return false;
+            }
+            $("#myform").submit();
+        })
+        
+        $("#btnPress").click(function(event) {
+            console.log(event);
+            event.preventDefault();
+            if($("#x").val().trim().length < 5) {
+                alert("5글자가 넘게 입력하세요");
+                $("#x").focus();
+                return false;
+            }
+            $("#myform").submit();
+        })
+    })
+</script>

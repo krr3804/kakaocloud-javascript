@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="aClass">파랗게</h1>
+    <h1 class="aClass">빨갛게</h1>
+    <h1 class="aClass">톰보이</h1>
+
+    <h1 class="bClass">모나리자</h1>
+    <h1 class="bClass">마도요</h1>
+    <h1 class="bClass">조용필</h1>
+</body>
+</html>
+<script>
+    //클래스네임으로 접근하기
+    var aClass = document.getElementsByClassName("aClass");
+    console.log(aClass); //컬렉션으로 온다.
+    console.log("데이터 개수 :" + aClass.length);
+
+    aClass[0].style.color = "blue";
+    aClass[1].style.color = "red";
+    aClass[2].style.color = "green";
+
+    var bClass = document.getElementsByClassName("bClass");
+    let colors = ["pink","navy","grey"];
+    for(i = 0; i < bClass.length; i++) {
+        bClass[i].style.color = colors[i];
+    }
+
+    //태그네임으로 접근하기
+    let h1 = document.getElementsByTagName("h1");
+    console.log(h1);
+    for(i=0; i < h1.length; i++) {
+        console.log(h1[i].innerHTML);
+    }
+    
+    //querySelector id로 접근할때는 #id, 클래스는 .class명
+    h1 = document.querySelector(".aClass");
+    console.log(h1);
+    h1.innerHTML = "바보";
+    h1 = document.querySelector("h1");
+    for(i = 0; i < h1.length; i++) {
+        h1[i].style.color = "blue";
+    }
+
+    h1 = document.querySelectorAll(".aClass");
+    for(i = 0; i <h1.length; i++) {
+        h1[i].style.color = "magenta";
+    }
+</script>

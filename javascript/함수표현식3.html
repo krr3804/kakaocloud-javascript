@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let arr = [3,2,1,4,5,6,7,11,25,64,32]; //배열 - 대괄호를 써서 배열을 만든다
+
+    function odd(x) {
+        return x%2==1;
+    }
+
+    let result = arr.filter(odd);
+    console.log(result);
+
+    result = arr.filter(function(x) { return x%2==1});
+    console.log(result);
+
+    result = arr.filter(x => x%2==1);
+    console.log(result);
+
+    let array = new Array();
+    array.push({name:"Steven", age: "40", sex:"male"});
+    array.push({name:"Jonh",age:30, sex: "male"});
+    array.push({name:"Susan",age:23,sex:"female"});
+
+    result = array.filter( e => e.sex == "female");
+    console.log(result[0]);
+</script>

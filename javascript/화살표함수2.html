@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let numArr = [10,20,-3,4,-5,-6,67,-1,50,29,-34];
+    let wordArr = ["school","hospital","assembly","compile","default","constuctor,","desk",
+                    "object","class","function","procedure","alt","bread","milk"];
+    let stuArr = [
+        {class:"1", name: "A", kor:90, eng:90, mat:90},
+        {class:"2", name: "B", kor:80, eng:60, mat:70},
+        {class:"2", name: "C", kor:70, eng:40, mat:80},
+        {class:"1", name: "D", kor:100, eng:70, mat:100},
+        {class:"1", name: "E", kor:85, eng:30, mat:10},
+        {class:"2", name: "F", kor:90, eng:10, mat:30}
+    ];
+
+    //문제1. numArr에서 음수만 골라내기
+    //문제2. wordArr에서 단어 길이가 여섯글자 이상인 것만 추출하기
+    //문제3. class가 1인 학생들과 2인 학생들 불리하기
+
+    console.log(numArr.filter(i => i<0));
+    console.log(wordArr.filter(w => w.length >= 6).map(w => w.toUpperCase()));
+    stuArr.filter(e => e.class == 1).map(e => console.log(`${e.class} ${e.name} ${e.kor} ${e.eng} ${e.mat}`));
+    stuArr.filter(e => e.class ==2).forEach(e => console.log(`${e.class} ${e.name} ${e.kor} ${e.eng} ${e.mat}`));
+
+    //stuArr에 총점하고 평균 계산해서 넣기
+
+    stuArr.map(e => {
+        e["total"] = e.kor + e.eng + e.mat;
+        e.avg = e.total / 3;
+    });
+
+    console.log(stuArr);
+
+    let{name, kor} = stuArr[0];
+    console.log(name, kor);
+
+    console.log(numArr.sort((a,b) => b-a)); //자기순서를 바꿈
+    
+    console.log(stuArr.sort((a,b) => a.total - b.total)); //오름차순
+    console.log(stuArr.sort((a,b) => b.total - a.total)); //내림차순
+
+    console.log(stuArr.sort((a,b) => b.name.localeCompare(a.name)));
+
+    let temp1 = numArr.map((object, i) => {
+        console.log(object, i);
+        return object;
+    });
+    console.log(temp1);
+
+    let arr2D = [
+        [1,2,3,4],
+        [5,6,7,8],
+        [9,10,11,12]
+    ];
+
+
+    arr2D.forEach((arr, index) => {
+        console.log("------------------");
+        arr.forEach((item, index) => {
+            console.log(item, index)
+        });
+    });
+
+    //첫번째 1차원배열에 2를 곱하고, 두번째 1차원배열은 3을 곱하고, 세번째는 4를 곱한다.
+    //map함수 사용
+    let i = 2;
+    let result = arr2D.map(arr => {
+        let temp = arr.map(e => e*i);
+        i++;
+        return temp;
+    });
+
+    console.log(result);
+    
+    result = numArr.find(x => x%2 ==0); //첫번째 찾은 데이터 하나만 반환한다.
+    console.log( result, typeof(result));
+    result = numArr.filter(x => x%2==0); //true를 만족하는 모든데이터를 배열로 만들어서 반환한다.
+    console.log(result, typeof(numArr));
+</script>

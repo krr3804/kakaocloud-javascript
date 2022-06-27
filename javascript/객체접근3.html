@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="myform">
+        name : <input type="text" name="name" id=""> <br/>
+        age : <input type="text" name="age" id=""> <br/>
+        phone : <input type="text" name="phone" id=""> <br/>
+    </form>
+</body>
+</html>
+<script>
+    document.getElementsByName("name")[0].value = "홍길동";
+    document.getElementsByName("age")[0].value = 23;
+    document.getElementsByName("phone")[0].value = "010-0000-0023";
+
+    console.log(document.myform.name.value);
+    console.log(document.myform.age.value);
+    console.log(document.myform.phone.value);
+    
+</script>

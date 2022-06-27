@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    async function loadData() {
+        let promise = new Promise((resolve,reject) => {
+            let user = {"username":"홍길동","age":32,"phone":"010-0002-0003"};
+            setTimeout(() => resolve(user),1000);
+        })
+
+        let result = await promise;
+        //프로미스가 이행될 때 까지 기다린다.
+        // console.log(result);
+        return result;
+    }
+
+    let a = loadData(); //리턴값은 promise임
+    console.log(a);
+    a
+    .then((data) => console.log(data.username, data.age, data.phone));
+</script>

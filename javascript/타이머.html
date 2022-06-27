@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btnPress">이벤트 지연 발생(timeout)</button>
+    <button id="btnInterval">이벤트 지연 발생(interval)</button>
+    <button id="btnStop">멈춰!</button>
+</body>
+</html>
+
+<script>
+    window.onload = () => {
+        document.getElementById("btnPress").addEventListener("click", () => {
+            setTimeout(() => {
+                alert("1초");
+            },1000); //원래는 컴퓨터에서 다루는 시간은 밀리초(1/1000);
+        });
+
+        document.getElementById("btnInterval").addEventListener("click",() => {
+            setInterval(() => {
+                console.log("*");
+            },500);
+        })
+    }
+</script>

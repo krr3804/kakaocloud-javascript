@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let person = {"name":"홍길동", "age":18};
+    console.log(person["name"]);
+    console.log(person["age"]);
+    console.log(person.name);
+    console.log(person.age);
+    person.address = "서울시";
+    person["phone"] = "010-0000-0000";
+    console.log(person);
+    //jason 배열
+    let personList = [
+        {"name":"홍길동", "age":23, "phone":"010-0000-0000","address":"신림동"},
+        {"name":"임꺽정", "age":22, "phone":"010-0001-0001","address":"대학동"},
+        {"name":"장길산", "age":54, "phone":"010-0002-0002","address":"구로동"},
+        {"name":"강감찬", "age":43, "phone":"010-0003-0003","address":"서초동"}
+    ]
+
+    for(i in personList) {
+        console.log(`${personList[i].name}` );
+    }
+
+    for(customer of personList) {
+        console.log(`${customer.name} ${customer.age} ${customer.phone} ${customer.address}`);
+    }
+
+    personList.forEach((e) => console.log(`${e.name} ${e.age} ${e.phone} ${e.address}`));
+</script>

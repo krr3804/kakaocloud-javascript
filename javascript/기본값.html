@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // function myFunction(a =10, b = 20, c = 30) {
+    //     return a+b+c;
+    // }
+    // console.log(myFunction());
+    // console.log(myFunction(1));
+    // console.log(myFunction(1,2));
+    // console.log(myFunction(1,2,3));
+
+    // function showMessage(text) {
+    //     console.log(typeof(text));
+    //     text = text || 'empty';
+    //     console.log(text);
+    // }
+
+    // showMessage();
+    // showMessage("바보");
+    // showMessage(null);
+    // showMessage("안녕하세요");
+
+    function showCount(count) {
+        console.log(typeof(count));
+        alert(count ?? "unknown");
+    }
+
+    showCount(5);
+    showCount("");
+    showCount(null);
+    showCount();
+
+</script>

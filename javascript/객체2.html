@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let person = {
+    name:"홍길동", age:23, phone:"010-0000-0001",
+    display:function() {
+        console.log(this.name, this.age, this.phone);
+    },
+
+    setValue:function(name="", age=10, phone="") {
+        this.name = name;
+        this.age = age;
+        this.phone = phone;
+    }
+}
+
+person.display();
+person.setValue("John",10,"010-1234-5678");
+person.display();
+
+console.log(person);
+
+//상속을 받아보자
+let student = {name:"장길산", kor:90, eng:80, mat:70,
+__proto__:person}
+
+console.log(student);
+console.log(student.phone, student.age);
+student.setValue("Steven",33,"010-2345-5678");
+student.display();
+console.log(student);
+</script>

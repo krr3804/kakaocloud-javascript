@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    값1 : <input type="text" name="" id="value1"> <br/>
+    값2 : <input type="text" name="" id="value2"> <br/>
+    <button type="button" class="button" id="btnAdd" value="+">더하기</button>
+    <button type="button" class="button" id="btnSub" value="-">빼기</button>
+    <button type="button" class="button" id="btnMul" value="*">곱하기</button>
+    <button type="button" class="button" id="btnDiv" value="/">나누기</button>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    window.onload = () => {
+        document.querySelectorAll("button").forEach(e => e.addEventListener("click",calculate));
+    }
+
+    function calculate(button) {
+        let val1 = parseInt(document.getElementById("value1").value);
+        let val2 = parseInt(document.getElementById("value2").value);
+        let op = button.target.value;
+        let result = 0;
+        if(op === "+") {
+            result = val1+val2;
+        }
+        if(op === "-") {
+            result = val1-val2;
+        }
+        if(op === "*") {
+            result = val1*val2;
+        }
+        if(op === "/") {
+            result = val1/val2;
+        }
+        document.getElementById("result").innerHTML =  result;
+    }
+</script>

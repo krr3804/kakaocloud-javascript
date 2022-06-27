@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let arr = [1,2,3,4,5]; //배열이 만들어지고 배열 주소가 저장된다.
+
+    arr.push(6);
+    arr.push(7);
+    arr.push(8);
+    arr.push(9);
+    arr.push(10);
+
+    console.log(arr);
+
+    let words=Array(); //words = [];
+    words.push("rose");
+    words.push("peach");
+    words.push("lily");
+    words.push("pineapple");
+    words.push("berry");
+    console.log(words);
+    console.log(words[0]);
+    console.log(words[2]);
+
+    words = words.concat("milk","president","survey","like");
+    console.log(words);
+
+    let s = words.join(","); //배열 요소들을 하나로 묶을때 사용한다
+
+    console.log(s);
+</script>

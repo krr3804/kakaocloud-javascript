@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>소문자를 입력하면 대문자로 바꿔준다</p>
+    <input type="text" name="" id="fname" onkeyup="myFunction()"> <br/>
+
+    <p>이벤트 발생순서</p>
+    <input type="text" name="" id="" onkeyup="console.log('keyup')" 
+    onkeypress="console.log('keypress')" 
+    onkeydown="console.log('keydown')"> <br/>
+
+</body>
+</html>
+<script>
+    function myFunction() {
+        var x = document.getElementById("fname");
+        x.value  = x.value.toUpperCase();
+    }
+</script>

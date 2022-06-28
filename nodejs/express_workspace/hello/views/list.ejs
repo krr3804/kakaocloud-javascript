@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/board/delete" method="post" name="form">
+        <% for(i = 0; i < boardList.length; i++) {%>
+            <h1><input type="hidden" name="box" value=<%=i%>>&nbsp;
+            <%= boardList[i].writer %> &nbsp;
+            <a href="/board/view/<%=boardList[i].id%>"><%= boardList[i].title %> &nbsp;</a>
+            <%= boardList[i].contents %> &nbsp;
+            <%= boardList[i].wdate %></h1>
+        <% } %>
+        <button><a href="/board/write/">글쓰기</a></button>
+        <button id="btnDelete">글삭제</button>
+    </form>
+    <button id="btnChoice">선택</button>
+</body>
+</html>
+<script>
+    window.onload = (() => {
+        document.getElementById("btnChoice").addEventListener("click",() => {
+            if(document.getElementsByName("box")[0].type == 'checkbox') {
+                document.getElementsByName("box").forEach(e => e.type = 'hidden');
+            } else {
+                document.getElementsByName("box").forEach(e => e.type = 'checkbox');
+                document.getElementsByName("box").forEach(e => e.checked = false);
+            }
+        })
+        document.getElementById("btnDelete").addEventListener("click",() => {
+            if(document.getElementsByName("box")[0].type == 'checkbox') {
+                var frm = document.myform;
+                frm.submit();
+            }
+        })
+    })
+</script>
